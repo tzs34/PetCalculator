@@ -3,10 +3,17 @@
   "description": "A demo application for RoosterMoney",
   "version": "0.0.1",
   "author": "Dave Thorneycroft",
+  "jest": {
+    "transform": {
+      ".js$": "babel-7-jest",
+      "modulePaths": ["<rootDir>/src/"]
+    }
+  },
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
     "dev": "webpack-dev-server --open --mode development | json-server --watch db.json --port 3001",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "test": "jest"
   },
   "dependencies": {
     "@babel/core": "^7.1.6",
@@ -15,6 +22,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
     "axios": "^0.18.0",
+    "babel-7-jest": "^21.3.3",
     "babel-loader": "^8.0.4",
     "babel-plugin-react-require": "^3.0.1",
     "babel-plugin-styled-components": "^1.8.0",
@@ -25,11 +33,13 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "install": "^0.12.2",
+    "jest": "^23.6.0",
     "json-server": "^0.14.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-inlinesvg": "^0.8.2",
+    "react-test-renderer": "^16.6.3",
     "styled-components": "3.2.0",
     "svg-inline-loader": "^0.8.0",
     "webpack": "^4.26.0",
